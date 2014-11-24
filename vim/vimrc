@@ -1,9 +1,23 @@
+" Vundle Stuff
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+"Vundle
+Plugin 'gmarik/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+" Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/syntastic'
+call vundle#end()
+filetype plugin indent on
+
+
 syntax enable " Turn on syntax highlighting  
 :colorscheme Tomorrow-Night-Bright
 set hidden " Leave hidden buffers open  
 set history=100 "by default Vim saves your last 8 commands.  We can handle more  
 set number
-set guifont=Source\ Code\ Pro\ For\ Powerline:h16
+set guifont=Inconsolata
 set splitright
 set splitbelow
 set encoding=utf-8
@@ -14,8 +28,8 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
-
-
+set backspace=indent,eol,start
+set incsearch
 
 " Syntax of these languages is fussy over tabs Vs spaces
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
