@@ -10,3 +10,4 @@ Storing my dotfiles for easy syncing
 [ ] - Figure out what has to be done to install Vundle first, considering vim now hanldes Vundle itself.
 [ ] - Add Homebrew and Homebrew installs for OSX
 [ ] - Add apt-get installs for Linux.
+[ ] - Add git aliases.
