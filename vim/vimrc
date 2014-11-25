@@ -17,7 +17,7 @@ syntax enable " Turn on syntax highlighting
 set hidden " Leave hidden buffers open  
 set history=100 "by default Vim saves your last 8 commands.  We can handle more  
 set number
-set guifont=Inconsolata
+set guifont=Source\ Code\ Pro
 set splitright
 set splitbelow
 set encoding=utf-8
@@ -31,12 +31,18 @@ set expandtab
 set backspace=indent,eol,start
 set incsearch
 
+" Fix OSX Clipboard via Dr. Bunsen
+noremap <leader>y "*y
+noremap <leader>yy "*Y
+" Preserve indentation while pasting text from the OS X clipboard
+noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+
 " Syntax of these languages is fussy over tabs Vs spaces
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
 
-" Customisations based on house-style (arbitrary)
+" Style-guide based customizations (Allovue)
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
