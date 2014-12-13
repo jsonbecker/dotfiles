@@ -1,9 +1,12 @@
+" Vim hates fish
+set shell=/bin/bash
+
 " Vundle Stuff
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundles/Vundle.vim
 call vundle#begin()
-"Vundle
+" Vundle Plugins
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 " Plugin 'airblade/vim-gitgutter'
@@ -32,17 +35,7 @@ set tabstop=2
 set expandtab
 set backspace=indent,eol,start
 set incsearch
-
-" MacVim
-set guioptions-=T
-set guioptions-=l
-set guioptions-=L
-set guioptions-=r
-set guioptions-=R
-
-" Ctrl - Z should undo like U
-noremap <C-z> u
-
+set wrap
 
 " Fix OSX Clipboard via Dr. Bunsen
 noremap <leader>y "*y
