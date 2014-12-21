@@ -1,5 +1,5 @@
 " Vim hates fish
-set shell=/bin/bash
+set shell=bash
 
 " Vundle Stuff
 set nocompatible
@@ -9,7 +9,7 @@ call vundle#begin()
 " Vundle Plugins
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
-" Plugin 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/The-NERD-tree'
