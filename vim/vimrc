@@ -1,5 +1,5 @@
 " Vim hates fish
-set shell=bash
+set shell=/bin/bash
 
 " Vundle Stuff
 set nocompatible
@@ -36,6 +36,32 @@ set expandtab
 set backspace=indent,eol,start
 set incsearch
 set wrap
+
+" Remap Escape
+imap jk <Esc>
+
+
+" Taken from Ted -- highlight columns
+" Column Length Highlighting
+highlight OverLength81 ctermbg=yellow ctermfg=gray guibg=#592929
+highlight OverLength120 ctermbg=red ctermfg=white guibg=#592929
+match OverLength81 /\%81v.\+/
+match OverLength120 /\%121v.\+/
+
+" Taken from Ted -- less annoying swaps
+" Save your swp files to a less annoying place than the current directory.
+" If you have .vim-swap in the current directory, it'll use that.
+" Otherwise it saves it to ~/.vim/swap, ~/tmp or .
+if isdirectory($HOME . '/.vim/swap') == 0
+ silent !mkdir -p ~/.vim/swap >/dev/null 2>&1
+endif
+set directory=./.vim-swap//
+set directory+=~/.vim/swap//
+set directory+=~/tmp//
+set directory+=.
+
+" Save on window blur
+au FocusLost * :wa
 
 " Fix OSX Clipboard via Dr. Bunsen
 noremap <leader>y "*y
