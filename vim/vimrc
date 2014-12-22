@@ -49,10 +49,15 @@ imap jk <Esc>
 
 " Taken from Ted -- highlight columns
 " Column Length Highlighting
-highlight OverLength81 ctermbg=yellow ctermfg=gray guibg=#592929
-highlight OverLength120 ctermbg=red ctermfg=white guibg=#592929
-match OverLength81 /\%81v.\+/
-match OverLength120 /\%121v.\+/
+
+augroup vimrc_autocmds
+    autocmd BufEnter * highlight OverLength81 ctermbg=gray guibg=#592929
+    autocmd BufEnter * highlight OverLength120 ctermbg=white guibg=#592929
+    autocmd BufEnter * match OverLength /\%81v.*/
+    autocmd BufEnter * match OverLength /\%120v.*/
+augroup END
+
+autocmd FileType markdown match none
 
 " Taken from Ted -- less annoying swaps
 " Save your swp files to a less annoying place than the current directory.
