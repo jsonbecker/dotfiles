@@ -6,6 +6,7 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundles/Vundle.vim
 call vundle#begin()
+
 " Vundle Plugins
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
@@ -41,7 +42,9 @@ set wrap
 imap jk <Esc>
 
 " Clean up split colors that get too crazy with gitgutter.
-hi vertsplit guifg=fg guibg=bg
+" hi vertsplit guifg=bg guibg=fg
+:highlight VertSplit cterm=none gui=none 
+:highlight SignColumn ctermbg=black guibg=#000000
 
 " Taken from Ted -- highlight columns
 " Column Length Highlighting
