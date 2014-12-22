@@ -17,6 +17,7 @@ Plugin 'vim-scripts/The-NERD-tree'
 call vundle#end()
 filetype plugin indent on
 
+autocmd VimEnter * NERDTree
 
 syntax enable " Turn on syntax highlighting  
 :colorscheme Tomorrow-Night-Bright
