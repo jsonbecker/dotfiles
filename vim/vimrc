@@ -53,8 +53,8 @@ imap jk <Esc>
 augroup vimrc_autocmds
     autocmd BufEnter * highlight OverLength81 ctermbg=gray guibg=#592929
     autocmd BufEnter * highlight OverLength120 ctermbg=white guibg=#592929
-    autocmd BufEnter * match OverLength /\%81v.*/
-    autocmd BufEnter * match OverLength /\%120v.*/
+    autocmd BufEnter * match OverLength81 /\%81v.*/
+    autocmd BufEnter * match OverLength120 /\%120v.*/
 augroup END
 
 autocmd FileType markdown match none
