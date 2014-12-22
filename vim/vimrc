@@ -40,6 +40,8 @@ set wrap
 " Remap Escape
 imap jk <Esc>
 
+" Clean up split colors that get too crazy with gitgutter.
+hi vertsplit guifg=fg guibg=bg
 
 " Taken from Ted -- highlight columns
 " Column Length Highlighting
