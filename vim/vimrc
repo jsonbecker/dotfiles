@@ -60,8 +60,8 @@ augroup vimrc_autocmds
 augroup END
 
 " See .md as markdown
-au BufRead,BufNewFile *.md set filetype=markdown
-au BufRead,BufNewFile *.mmd set filetype=markdown
+au BufRead,BufNewFile *.md setfiletype=markdown
+au BufRead,BufNewFile *.mmd setfiletype=markdown
 
 " Taken from Ted -- less annoying swaps
 " Save your swp files to a less annoying place than the current directory.
