@@ -15,6 +15,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/The-NERD-tree'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'bling/vim-airline'
 call vundle#end()
 filetype plugin indent on
 
@@ -25,7 +26,7 @@ syntax enable " Turn on syntax highlighting
 set hidden " Leave hidden buffers open  
 set history=100 "by default Vim saves your last 8 commands.  We can handle more  
 set number
-set guifont=Source\ Code\ Pro:h13
+set guifont=Source\ Code\ Pro\ for\ Powerline:h13
 set splitright
 set splitbelow
 set encoding=utf-8
@@ -102,3 +103,6 @@ autocmd BufNewFile,BufRead *.rss setfiletype xml
 let g:vim_markdown_math=1
 let g:vim_markdown_frontmatter=1
 let g:vim_markdown_folding_disabled=1
+
+" Settings for powerline
+let g:airline_powerline_fonts = 1
