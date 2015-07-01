@@ -55,6 +55,8 @@ function brew_install_fonts(){
 
 ## Install Stuff with Brew
 recipes =(
+    nodejs
+    elasticsearch
     ffmpeg
     mkvtoolnix
     mp4v2
