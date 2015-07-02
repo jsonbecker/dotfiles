@@ -1,0 +1,32 @@
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[user]
+	name = jsonbecker
+	email = jason@jbecker.co
+[users]
+	email = jason@allovue.com
+[alias]
+	co = checkout
+	ada = add -A 
+	ca = commit -a
+  st = status
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[merge]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain
+[core]
+	editor = mvim -f
