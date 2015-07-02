@@ -16,6 +16,7 @@ Plugin 'vim-scripts/The-NERD-tree'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'bling/vim-airline'
+Plugin 'chrismccord/bclose.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -106,3 +107,4 @@ let g:vim_markdown_folding_disabled=1
 
 " Settings for powerline
 let g:airline_powerline_fonts = 1
+let g:air_powerline_symbols = 'fancy'
