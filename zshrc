@@ -56,7 +56,12 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Make it easy to deal with postgresql from Jake
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgtail='tail -f /usr/local/var/postgres/server.log'
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+
+# Safe remove to trash after brew install trash
+alias rm='trash'
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

@@ -76,6 +76,7 @@ recipes =(
     pandoc
     postgresql
     sqlite
+    trash
 )
 brew_install_recipes
 
