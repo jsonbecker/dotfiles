@@ -9,7 +9,36 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 brew update
 
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 ## From cowboy/dotfiles/init
+
+function e_header()   { echo -e "\n\033[1m$@\033[0m"; }
+function e_success()  { echo -e " \033[1;32m✔\033[0m  $@"; }
+function e_error()    { echo -e " \033[1;31m✖\033[0m  $@"; }
+function e_arrow()    { echo -e " \033[1;34m➜\033[0m  $@"; }
+
+function setdiff() {
+  local debug skip a b
+  if [[ "$1" == 1 ]]; then debug=1; shift; fi
+  if [[ "$1" ]]; then
+    local setdiffA setdiffB setdiffC
+    setdiffA=($1); setdiffB=($2)
+  fi
+  setdiffC=()
+  for a in "${setdiffA[@]}"; do
+    skip=
+    for b in "${setdiffB[@]}"; do
+      [[ "$a" == "$b" ]] && skip=1 && break
+    done
+    [[ "$skip" ]] || setdiffC=("${setdiffC[@]}" "$a")
+  done
+  [[ "$debug" ]] && for a in setdiffA setdiffB setdiffC; do
+    echo "$a ($(eval echo "\${#$a[*]}")) $(eval echo "\${$a[*]}")" 1>&2
+  done
+  [[ "$1" ]] && echo "${setdiffC[@]}"
+}
+
 function brew_tap_kegs() {
   kegs=($(setdiff "${kegs[*]}" "$(brew tap)"))
   if (( ${#kegs[@]} > 0 )); then
@@ -25,7 +54,7 @@ function brew_install_recipes() {
   if (( ${#recipes[@]} > 0 )); then
     e_header "Installing Homebrew recipes: ${recipes[*]}"
     for recipe in "${recipes[@]}"; do
-      brew install $recipe
+      brew -v install $recipe
     done
   fi
 }
@@ -53,8 +82,11 @@ function brew_install_fonts(){
 }
 
 
+## For elasticsearch
+brew install Caskroom/cask/java
+
 ## Install Stuff with Brew
-recipes =(
+recipes=(
     nodejs
     elasticsearch
     ffmpeg
@@ -89,7 +121,7 @@ git config --global credential.helper osxkeychain
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 ## Install applications with brew-cask
-kegs =(
+kegs=(
     caskroom/cask
     caskroom/fonts
     caskroom/versions
@@ -97,7 +129,7 @@ kegs =(
 
 brew_tap_kegs
 
-brew install brew-cask
+brew install caskroom/cask/brew-cask
 brew update && brew upgrade brew-cask && brew cleanup
 
 casks=(
@@ -137,7 +169,7 @@ brew_install_casks
 
 ## Install Fonts
 
-fonts =(
+fonts=(
     font-open-sans
     font-montserrat
     font-source-code-pro
