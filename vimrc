@@ -27,7 +27,7 @@ syntax enable " Turn on syntax highlighting
 set hidden " Leave hidden buffers open  
 set history=100 "by default Vim saves your last 8 commands.  We can handle more  
 set number
-set guifont=Source\ Code\ Pro\ for\ Powerline:h13
+set guifont=Hack:h13
 set splitright
 set splitbelow
 set encoding=utf-8

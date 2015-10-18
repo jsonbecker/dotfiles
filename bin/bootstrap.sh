@@ -138,6 +138,8 @@ brew_install_casks
 ## Install Fonts
 
 fonts =(
+    font-lato
+    font-hack
     font-open-sans
     font-montserrat
     font-source-code-pro

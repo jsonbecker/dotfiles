@@ -65,3 +65,5 @@ alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias rm='trash'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
