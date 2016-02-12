@@ -30,3 +30,5 @@
 	helper = osxkeychain
 [core]
 	editor = mvim -f
+[commit]
+  template = ~/.gitmessage

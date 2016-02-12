@@ -19,6 +19,7 @@ link_if_missing $PWD/vim            $HOME/.vim
 link_if_missing $PWD/zsh            $HOME/.zsh
 # link_if_missing $PWD/ackrc        $HOME/.ackrc
 link_if_missing $PWD/gitconfig      $HOME/.gitconfig
+link_if_missing $PWD/gitmessage     $HOME/.gitmessage
 # link_if_missing $PWD/gitignore    $HOME/.gitignore
 # link_if_missing $PWD/imwheelrc    $HOME/.imwheelrc
 # link_if_missing $PWD/irbrc        $HOME/.irbrc
