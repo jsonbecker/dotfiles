@@ -135,7 +135,7 @@ brew update && brew upgrade brew-cask && brew cleanup
 casks=(
     handbrakecli
     r
-    r-studio
+    rstudio
     vlc
     postbox
     iterm2
