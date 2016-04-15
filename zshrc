@@ -67,6 +67,7 @@ alias rm='trash'
 blowthistacostand (){
   npm cache clean && bower cache clean
   rm -rf bower_components
+  rm -rf node_modules
   npm install && bower install
 }
 
