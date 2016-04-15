@@ -64,6 +64,13 @@ alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 # Safe remove to trash after brew install trash
 alias rm='trash'
 
+blowthistacostand (){
+  npm cache clean && bower cache clean
+  rm -rf bower_components
+  npm install && bower install
+}
+
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
