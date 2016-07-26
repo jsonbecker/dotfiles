@@ -163,6 +163,7 @@ casks=(
     transmit
     slack
     todoist
+    dbeaver-community
 )
 
 brew_install_casks
