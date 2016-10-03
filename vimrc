@@ -17,6 +17,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'bling/vim-airline'
 Plugin 'chrismccord/bclose.vim'
+Plugin 'jalvesaq/Nvim-R'
 call vundle#end()
 filetype plugin indent on
 
@@ -49,17 +50,6 @@ imap jk <Esc>
 " hi vertsplit guifg=bg guibg=fg
 :highlight VertSplit cterm=none gui=none 
 :highlight SignColumn ctermbg=black guibg=#000000
-
-" Taken from Ted -- highlight columns
-" Column Length Highlighting
-
-augroup vimrc_autocmds
-  autocmd BufEnter * highlight OverLength81 ctermbg=red guibg=#592929
-  autocmd BufEnter * highlight OverLength120 ctermbg=red guibg=#592929
-  autocmd BufEnter * match OverLength81 /\%81v.*/
-  autocmd BufEnter * match OverLength120 /\%120v.*/
-  autocmd FileType markdown match none
-augroup END
 
 " See .md as markdown
 au BufRead,BufNewFile *.md setfiletype=markdown
