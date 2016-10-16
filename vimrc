@@ -98,3 +98,6 @@ let g:vim_markdown_folding_disabled=1
 " Settings for powerline
 let g:airline_powerline_fonts = 1
 let g:air_powerline_symbols = 'fancy'
+
+" Kill stupid vim-r assignment
+let vimrplugin_assign = 0
