@@ -17,7 +17,6 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'bling/vim-airline'
 Plugin 'chrismccord/bclose.vim'
-Plugin 'jalvesaq/Nvim-R'
 call vundle#end()
 filetype plugin indent on
 
