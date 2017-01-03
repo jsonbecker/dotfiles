@@ -236,9 +236,14 @@ echo "Setting email addresses to copy as 'foo@example.com' instead of 'Foo Bar <
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
 echo ""
+echo "Disabling drop shadows on screenshots"
+defaults write com.apple.screencapture disable-shadow -bool true
+
+echo ""
 cecho "Note that some of these changes require a logout/restart to take effect." $red
 cecho "Killing some open applications in order to take effect." $red
 echo ""
+
  
 find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
