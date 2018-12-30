@@ -22,24 +22,22 @@ HIST_STAMPS="yyyy-mm-dd"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew ruby python osx docker gem vagrant)
+plugins=(git brew ruby python osx docker gem vagrant jsontools gpg-agent)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:/Users/jason/bin:"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:/Users/jason/bin:/Library/TeX/texbin:"
+export GPG_TTY=$(tty) # so gpg works always
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim -f'
-fi
+EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -78,3 +76,7 @@ eval "$(rbenv init -)"
 
 export NVM_DIR="/Users/jason/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
+export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
+export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
+export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"

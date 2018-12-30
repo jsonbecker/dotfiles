@@ -9,6 +9,7 @@ call vundle#begin()
 
 " Vundle Plugins
 Plugin 'gmarik/Vundle.vim'
+Plugin 'arcticicestudio/nord-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
@@ -17,6 +18,9 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'bling/vim-airline'
 Plugin 'chrismccord/bclose.vim'
+Plugin 'dracula/vim'
+Plugin 'ncm2/ncm2'
+Plugin 'jalvesaq/Nvim-R'
 call vundle#end()
 filetype plugin indent on
 
@@ -43,7 +47,7 @@ set incsearch
 set wrap
 
 " Remap Escape
-imap jk <Esc>
+imap ;; <Esc>
 
 " Clean up split colors that get too crazy with gitgutter.
 " hi vertsplit guifg=bg guibg=fg
@@ -100,3 +104,4 @@ let g:air_powerline_symbols = 'fancy'
 
 " Kill stupid vim-r assignment
 let vimrplugin_assign = 0
+
