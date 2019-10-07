@@ -1,24 +1,25 @@
+set shell=/bin/zsh
+
 " vim-plug Stuff
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Vundle Plugins
 Plug 'gmarik/Vundle.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/syntastic'
 Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'vim-scripts/The-NERD-tree'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'itchyny/lightline.vim'
-Plug 'sheerun/vim-polyglot'
+Plug 'bling/vim-airline'
 Plug 'chrismccord/bclose.vim'
 Plug 'dracula/vim'
-Plug 'vim-devicons'
+Plug 'jalvesaq/Nvim-R'
+Plug 'chrisbra/csv.vim'
 call plug#end()
 
-autocmd VimEnter * NERDTree
-
 syntax enable " Turn on syntax highlighting  
-:colorscheme Tomorrow-Night-Bright
+:colorscheme Dracula
 set hidden " Leave hidden buffers open  
 set history=100 "by default Vim saves your last 8 commands.  We can handle more  
 set number
@@ -37,8 +38,11 @@ set backspace=indent,eol,start
 set incsearch
 set wrap
 
-" Remap Escape
+" Map Escape
 imap ;; <Esc>
+
+" Map NERDTree
+nnoremap <silent> nt :NERDTree <CR>
 
 " Clean up split colors that get too crazy with gitgutter.
 " hi vertsplit guifg=bg guibg=fg
@@ -96,4 +100,3 @@ let g:air_powerline_symbols = 'fancy'
 " Kill stupid vim-r assignment
 let vimrplugin_assign = 0
 let R_assign = 0
-

@@ -30,3 +30,4 @@ link_if_missing $PWD/gvimrc         $HOME/.gvimrc
 link_if_missing $PWD/vimrc          $HOME/.vimrc
 link_if_missing $PWD/zshrc          $HOME/.zshrc
 link_if_missing $PWD/zsh/jbecker.zsh-theme $HOME/.oh-my-zsh/themes/jbecker.zsh-theme
+link_if_missing $PWD/nvim/init.vim  $HOME/.config/nvim/init.vim
