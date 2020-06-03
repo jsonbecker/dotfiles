@@ -16,6 +16,10 @@ Plug 'chrismccord/bclose.vim'
 Plug 'dracula/vim'
 Plug 'jalvesaq/Nvim-R'
 Plug 'chrisbra/csv.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'elixir-lang/vim-elixir'
+Plug 'thinca/vim-ref'
+Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
 call plug#end()
 
 syntax enable " Turn on syntax highlighting  

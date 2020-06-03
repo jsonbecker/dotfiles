@@ -60,7 +60,7 @@ alias pgtail='tail -f /usr/local/var/postgres/server.log'
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 # Safe remove to trash after brew install trash
-alias rm='trash'
+# # # # # # # # # alias rm='trash'
 
 blowthistacostand (){
   npm cache clean && bower cache clean
@@ -69,6 +69,8 @@ blowthistacostand (){
   npm install && bower install
 }
 
+gam() { "/Users/jason/bin/gam/gam" "$@" ; }
+
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -76,7 +78,6 @@ eval "$(rbenv init -)"
 
 export NVM_DIR="/Users/jason/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
-export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
-export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
-export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/11/bin/:$PATH"
+eval $(thefuck --alias)
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
