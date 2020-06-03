@@ -27,11 +27,11 @@
 [diff]
 	tool = Kaleidoscope
 [push]
-	default = simple
+	default = current
 [credential]
 	helper = osxkeychain
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = /Users/jason/.gitignore
 [commit]
   template = ~/.gitmessage
