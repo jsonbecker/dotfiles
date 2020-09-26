@@ -82,6 +82,6 @@ eval "$(rbenv init -)"
 
 export NVM_DIR="/Users/jason/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export PATH="/Applications/Postgres.app/Contents/Versions/11/bin/:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/12/bin/:$PATH"
 eval $(thefuck --alias)
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
