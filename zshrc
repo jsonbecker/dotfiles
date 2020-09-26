@@ -71,6 +71,10 @@ blowthistacostand (){
 
 gam() { "/Users/jason/bin/gam/gam" "$@" ; }
 
+tunnel_pid () {
+  sudo lsof -n -i :8080 | grep LISTEN | cut -c 9-14 | uniq
+}
+
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$HOME/.rbenv/bin:$PATH"
