@@ -22,7 +22,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew ruby python osx docker gem vagrant jsontools gpg-agent)
+plugins=(git brew ruby osx gem jsontools gpg-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -37,7 +37,7 @@ export GPG_TTY=$(tty) # so gpg works always
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-EDITOR='vim'
+EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -53,11 +53,6 @@ EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Make it easy to deal with postgresql from Jake
-alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias pgtail='tail -f /usr/local/var/postgres/server.log'
-alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 # Safe remove to trash after brew install trash
 # # # # # # # # # alias rm='trash'
@@ -85,3 +80,5 @@ export NVM_DIR="/Users/jason/.nvm"
 export PATH="/Applications/Postgres.app/Contents/Versions/12/bin/:$PATH"
 eval $(thefuck --alias)
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export ANSIBLE_VAULT_PASSWORD_FILE=~/.ansible/pass_file
+export PSQL_EDITOR="nvim"
