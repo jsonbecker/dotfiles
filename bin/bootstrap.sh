@@ -4,9 +4,10 @@
 ### Assume that XCode is installed since some recipes complain if using
 ### the xcode-select CLI tools instead of XCode.
 # xcode-select --install
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
+
 brew update
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
