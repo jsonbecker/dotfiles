@@ -28,7 +28,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:/Users/jason/bin:/Library/TeX/texbin:"
+export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:/Users/jason/bin:/Library/TeX/texbin:$PATH"
 export GPG_TTY=$(tty) # so gpg works always
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -64,11 +64,40 @@ blowthistacostand (){
   npm install && bower install
 }
 
-gam() { "/Users/jason/bin/gam/gam" "$@" ; }
-
 tunnel_pid () {
   sudo lsof -n -i :8080 | grep LISTEN | cut -c 9-14 | uniq
 }
+
+psql-staging() { 
+  local tenant="${1:-public}"
+  local port_number=$(unused-port-number)
+  open-tunnel staging $port_number 
+  env PGDATABASE=balance_foo PGHOST=localhost PGUSER=balance_rails PGPORT=${port_number} PGOPTIONS=--search_path="${tenant},shared_extensions" psql
+  close-tunnel $port_number
+}
+
+close-tunnel() {
+  local port_number="$1"
+  ssh -S /tmp/tunnel_${port_number} -O exit zuul
+}
+
+open-tunnel() {
+  local env="$1"
+  local port_number="$2"
+  case $env in
+    staging|qa)
+    ssh -M -S /tmp/tunnel_${port_number} -NfC -L ${port_number}:balance-staging.crkdkhrqjrq1.us-east-1.rds.amazonaws.com:5432 -o IdentitiesOnly=yes zuul;;
+    production)
+    ssh -M -S /tmp/tunnel_${port_number} -NfC -L ${port_number}:balance-production.crkdkhrqjrq1.us-east-1.rds.amazonaws.com:5432 -o IdentitiesOnly=yes zuul
+    ;;
+    *)
+    ;;
+    esac
+}
+
+unused-port-number() {
+	ruby -e 'require "socket"; puts Addrinfo.tcp("", 0).bind {|s| s.local_address.ip_port }' 
+}   
 
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
@@ -82,3 +111,15 @@ eval $(thefuck --alias)
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.ansible/pass_file
 export PSQL_EDITOR="nvim"
+eval $(/opt/homebrew/bin/brew shellenv)
+eval $(/opt/homebrew/bin/brew shellenv)
+eval $(/opt/homebrew/bin/brew shellenv)
+export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="/Library/Frameworks/R.framework/Resources:$PATH"
+export PATH="/opt/homebrew/opt/icu4c/bin:$PATH"
+export PATH="/opt/homebrew/opt/icu4c/sbin:$PATH"
+export ERL_AFLAGS="-kernel shell_history enabled"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export JAVA_HOME="/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home"
+export PATH="/Users/jason/.mix/escripts:$PATH"
+

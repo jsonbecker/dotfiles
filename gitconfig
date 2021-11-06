@@ -4,10 +4,12 @@
 	smudge = git media smudge %f
 [user]
 	name = jsonbecker
-	email = jason@jbecker.co
-	signingkey = D7B00B432BA08883
-[users]
 	email = jason@allovue.com
+	signingkey = 402F35FE936985689285CD84B5BD7C4A907DB4BB
+[users]
+  name = jsonbecker
+	email = jason@allovue.com
+  signingkey = B5BD7C4A907DB4BB
 [alias]
 	co = checkout
 	ada = add -A 
@@ -35,7 +37,7 @@
 	excludesfile = /Users/jason/.gitignore
 [commit]
   template = ~/.gitmessage
-	gpgsign = true
+	gpgsign = false
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
