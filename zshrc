@@ -22,7 +22,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew ruby osx gem jsontools gpg-agent)
+plugins=(git brew ruby macos gem jsontools gpg-agent)
 
 source $ZSH/oh-my-zsh.sh
 
