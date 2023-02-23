@@ -5,19 +5,27 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Vundle Plugins
 Plug 'VundleVim/Vundle.vim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'VonHeikemen/lsp-zero.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/syntastic'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-scripts/The-NERD-tree'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
 Plug 'chrismccord/bclose.vim'
 Plug 'dracula/vim'
 Plug 'jalvesaq/Nvim-R'
 Plug 'chrisbra/csv.vim'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'elixir-editors/vim-elixir'
 Plug 'c-brenn/phoenix.vim'
 Plug 'mhinz/vim-mix-format'
