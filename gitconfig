@@ -3,13 +3,9 @@
 	clean = git media clean %f
 	smudge = git media smudge %f
 [user]
-	name = jsonbecker
-	email = jason@allovue.com
-	signingkey = 402F35FE936985689285CD84B5BD7C4A907DB4BB
-[users]
-  name = jsonbecker
-	email = jason@allovue.com
-  signingkey = B5BD7C4A907DB4BB
+	name = Jason Becker
+	email = jason@jbecker.co
+	signingkey = /Users/jason/.ssh/id_ed25519.pub
 [alias]
 	co = checkout
 	ada = add -A 
@@ -35,13 +31,13 @@
 [core]
 	editor = nvim
 	excludesfile = /Users/jason/.gitignore
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [commit]
   template = ~/.gitmessage
-	gpgsign = false
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
-[gpg]
-	program = /usr/local/MacGPG2/bin/gpg2
+[interactive]
+	diffFilter = diff-so-fancy --patch

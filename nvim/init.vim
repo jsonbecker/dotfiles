@@ -4,7 +4,7 @@ set shell=/bin/zsh
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Vundle Plugins
-Plug 'gmarik/Vundle.vim'
+Plug 'VundleVim/Vundle.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/syntastic'
 Plug 'kien/ctrlp.vim'
@@ -16,8 +16,12 @@ Plug 'chrismccord/bclose.vim'
 Plug 'dracula/vim'
 Plug 'jalvesaq/Nvim-R'
 Plug 'chrisbra/csv.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'elixir-lang/vim-elixir'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'elixir-editors/vim-elixir'
+Plug 'c-brenn/phoenix.vim'
+Plug 'mhinz/vim-mix-format'
+Plug 'mattreduce/vim-mix'
 Plug 'thinca/vim-ref'
 Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
 Plug 'sbdchd/neoformat'
@@ -29,7 +33,7 @@ syntax enable " Turn on syntax highlighting
 set hidden " Leave hidden buffers open  
 set history=100 "by default Vim saves your last 8 commands.  We can handle more  
 set number
-set guifont=Hack:h13
+set guifont=Berkeley\ Mono:h13
 set splitright
 set splitbelow
 set encoding=utf-8
@@ -56,8 +60,8 @@ nnoremap <silent> nt :NERDTree <CR>
 :highlight SignColumn ctermbg=black guibg=#000000
 
 " See .md as markdown
-au BufRead,BufNewFile *.md setfiletype=markdown
-au BufRead,BufNewFile *.mmd setfiletype=markdown
+au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.mmd set filetype=markdown
 
 " Taken from Ted -- less annoying swaps
 " Save your swp files to a less annoying place than the current directory.
@@ -106,3 +110,8 @@ let g:air_powerline_symbols = 'fancy'
 " Kill stupid vim-r assignment
 let vimrplugin_assign = 0
 let R_assign = 0
+
+au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
+au BufRead,BufNewFile *.eex,*.heex,*.leex,*.sface,*.lexs set filetype=eelixir
+au BufRead,BufNewfile mix.lock set filetype=elixir
+au BufRead,BufNewfile *.sql set filetype=sql
