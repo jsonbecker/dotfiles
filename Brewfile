@@ -1,12 +1,5 @@
 tap "github/gh"
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
-tap "homebrew/services"
 tap "microsoft/mssql-release"
-tap "rigellute/tap"
 # Spell checker with better logic than ispell
 brew "aspell"
 # Official Amazon AWS command-line interface
@@ -23,8 +16,6 @@ brew "cairo"
 brew "jemalloc"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
-# Emacs dependency management
-brew "cask"
 # Free lossless audio codec
 brew "flac"
 # Blu-Ray disc playback library for media players like VLC
@@ -77,8 +68,6 @@ brew "libheif"
 brew "libomp"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
-# Manage your Java environment
-brew "jenv"
 # Implementation of the file(1) command
 brew "libmagic"
 # Extensible, open standard container format for audio/video
@@ -117,14 +106,8 @@ brew "ruby-build"
 brew "rbenv"
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
-# Spotify daemon
-brew "spotifyd", restart_service: true
-# Programmatically correct mistyped console commands
-brew "thefuck"
 # Internet file retriever
 brew "wget"
-# JavaScript package manager
-brew "yarn"
 # Download YouTube videos from the command-line
 brew "youtube-dl"
 # UNIX shell (command interpreter)
@@ -133,11 +116,8 @@ brew "zsh"
 brew "zsh-completions"
 # ODBC Driver for Microsoft(R) SQL Server(R)
 brew "microsoft/mssql-release/msodbcsql17"
-# A terminal user interface for Spotify
-brew "rigellute/tap/spotify-tui"
 # Application launcher and productivity software
 cask "alfred"
-cask "amazon-chime"
 # Data backup and storage service
 cask "backblaze"
 # Menu bar icon organizer
@@ -181,25 +161,12 @@ cask "gpg-suite"
 cask "iterm2"
 # Spots differences in text and image files
 cask "kaleidoscope"
-# Music services manager
-cask "lastfm"
-cask "livereload"
-# QuickLook plug-in that renders source code with syntax highlighting
-cask "qlcolorcode"
-# QuickLook generator for Markdown files
-cask "qlmarkdown"
-cask "qlprettypatch"
-cask "qlstephen"
 cask "quicklook-csv"
 cask "quicklook-json"
-# Music streaming service
-cask "spotify"
 # Tool for liberating data tables trapped inside PDF files
 cask "tabula"
 # Unpacks archive files
 cask "the-unarchiver"
-# Git client focusing on power and productivity
-cask "tower"
 # File transfer application
 cask "transmit"
 # Open-source code editor
@@ -208,29 +175,11 @@ cask "visual-studio-code"
 cask "vlc"
 # Open-source version of the X.Org X Window System
 cask "xquartz"
-mas "1Blocker", id: 1107421413
-mas "Agenda", id: 1287445660
-mas "Bear", id: 1091189122
 mas "CARROT Weather", id: 993487541
 mas "Craft", id: 1487937127
 mas "DaisyDisk", id: 411643860
 mas "Day One", id: 1055511498
-mas "Deliveries", id: 924726344
 mas "iA Writer", id: 775737590
-mas "Kindle", id: 405399194
-mas "Letter Opener", id: 411897373
-mas "LG Screen Manager", id: 1142051783
-mas "Microsoft Excel", id: 462058435
-mas "Microsoft PowerPoint", id: 462062816
-mas "Microsoft Word", id: 462054704
-mas "Moom", id: 419330170
-mas "Pixelmator", id: 407963104
-mas "Pixelmator Pro", id: 1289583905
 mas "Reeder", id: 1529448980
-mas "Sim Daltonism", id: 693112260
-mas "Spark", id: 1176895641
-mas "Tot", id: 1491071483
-mas "Trello", id: 1278508951
-mas "Twitter", id: 1482454543
 mas "WiFi Explorer", id: 494803304
 mas "Xcode", id: 497799835

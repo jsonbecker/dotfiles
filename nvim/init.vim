@@ -1,10 +1,15 @@
 set shell=/bin/zsh
 
 " vim-plug Stuff
-call plug#begin('~/.local/share/nvim/plugged')
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 
+call plug#begin('~/.config/nvim/autoload/plugged')
 " Vundle Plugins
-Plug 'VundleVim/Vundle.vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'hrsh7th/nvim-cmp'
@@ -114,6 +119,9 @@ let g:vim_markdown_folding_disabled=1
 " Settings for powerline
 let g:airline_powerline_fonts = 1
 let g:air_powerline_symbols = 'fancy'
+
+" Settings for prettier
+let g:neoformat_try_node_exe = 1
 
 " Kill stupid vim-r assignment
 let vimrplugin_assign = 0
