@@ -6,7 +6,7 @@
 # xcode-select --install
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
+echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.zshrc
 
 brew update
 
@@ -20,11 +20,6 @@ git config --global credential.helper osxkeychain
 
 ## Install oh-my-zsh
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-
-## Don Melton video_transcodiing
-
-gem install video_transcoding
-gem install other_transcoding
 
 echo ""
 echo "Automatically quit printer app once the print jobs complete"

@@ -74,14 +74,7 @@ unused-port-number() {
 }   
 
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
-export NVM_DIR="/Users/jason/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export PATH="/Applications/Postgres.app/Contents/Versions/12/bin/:$PATH"
-eval $(thefuck --alias)
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.ansible/pass_file
 export PSQL_EDITOR="nvim"
@@ -99,7 +92,7 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export JAVA_HOME="/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home"
 export PATH="/Users/jason/.mix/escripts:$PATH"
 
-
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 allovue_database () {
    export TUNNEL=ec2-user@zuul.allovue.com
@@ -118,3 +111,4 @@ allovue_database () {
      esac
    done
 }
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
